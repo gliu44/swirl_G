@@ -432,6 +432,10 @@ resume.default <- function(e, ...){
       
       # Let user know lesson is complete
       swirl_out(s()%N%"You've reached the end of this lesson! Returning to the main menu...")
+      img_url <- "https://png.pngtree.com/png-vector/20230116/ourmid/pngtree-3d-star-badge-clipart-png-image_6564314.png"
+      img <- png::readPNG(img_url)
+      graphics::plot(1, type = "n", ann = FALSE, axes = FALSE)
+      rasterImage(img, 0, 0, 1, 1)
       # let the user select another course lesson
       temp <- mainMenu(e)
       # if menu returns FALSE, user wants to quit.
